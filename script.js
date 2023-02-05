@@ -23,14 +23,14 @@ function divisao(num1, num2) {
   return num1 / num2;
 }
 
-function clearOperation() {
+function limparTudo() {
   numero1 = "";
   numero2 = "";
   operation = null;
   display.innerText = 0;
 }
 
-function cancelEntry() {
+function limparEntrada() {
   if (operation !== null) {
     numero2 = "";
   } else {
@@ -39,7 +39,33 @@ function cancelEntry() {
   display.innerText = 0;
 }
 
-function calculate() {
+function apagarDigito() {
+  if (operation !== null) {
+    if (numero2 === "") {
+      operation = null;
+    } else {
+      if (numero2.length > 1) {
+        numero2Separatade = numero2.split("");
+        numero2Separatade.pop();
+        numero2 = numero2Separatade.join("");
+        display.innerText = numero2;
+      } else {
+        limparEntrada();
+      }
+    }
+  } else {
+    if (numero1.length > 1) {
+      numero1Separatade = numero1.split("");
+      numero1Separatade.pop();
+      numero1 = numero1Separatade.join("");
+      display.innerText = numero1;
+    } else {
+      limparEntrada();
+    }
+  }
+}
+
+function calcular() {
   if (operation === "+") {
     let resultado = soma(Number(numero1), Number(numero2));
     display.innerText = resultado;
@@ -78,10 +104,12 @@ teclado.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("operations")) {
     operation = e.target.textContent;
   } else if (e.target.id === "CE") {
-    cancelEntry();
+    limparEntrada();
   } else if (e.target.id === "C") {
-    clearOperation();
+    limparTudo();
   } else if (e.target.id === "igual") {
-    calculate();
+    calcular();
+  } else if (e.target.id === "Del") {
+    apagarDigito();
   }
 });
