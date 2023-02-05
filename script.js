@@ -5,18 +5,70 @@ let numero2 = "";
 let operation = null;
 
 function soma(num1, num2) {
-  console.log(num1);
-  console.log(num2);
   return num1 + num2;
 }
 
-teclado.addEventListener("click", (e) => {
-  console.log(e.target.textContent);
+function subtracao(num1, num2) {
+  return num1 - num2;
+}
 
+function multiplicacao(num1, num2) {
+  return num1 * num2;
+}
+
+function divisao(num1, num2) {
+  if (num2 === 0) {
+    return null;
+  }
+  return num1 / num2;
+}
+
+function clearOperation() {
+  numero1 = "";
+  numero2 = "";
+  operation = null;
+  display.innerText = 0;
+}
+
+function cancelEntry() {
+  if (operation !== null) {
+    numero2 = "";
+  } else {
+    numero1 = "";
+  }
+  display.innerText = 0;
+}
+
+function calculate() {
+  if (operation === "+") {
+    let resultado = soma(Number(numero1), Number(numero2));
+    display.innerText = resultado;
+    numero1 = resultado;
+    numero2 = "";
+  } else if (operation === "-") {
+    let resultado = subtracao(Number(numero1), Number(numero2));
+    display.innerText = resultado;
+    numero1 = resultado;
+    numero2 = "";
+  } else if (operation === "X") {
+    let resultado = multiplicacao(Number(numero1), Number(numero2));
+    display.innerText = resultado;
+    numero1 = resultado;
+    numero2 = "";
+  } else if (operation === "/") {
+    let resultado = divisao(Number(numero1), Number(numero2));
+    if (resultado === null) {
+      resultado = "Erro";
+    }
+    display.innerText = resultado;
+    numero1 = resultado;
+    numero2 = "";
+  }
+}
+
+teclado.addEventListener("click", (e) => {
   if (e.target.classList.contains("numbers")) {
-    console.log(e.target.classList.contains("numbers"));
     if (operation !== null) {
-      console.log(operation !== null);
       numero2 += e.target.textContent;
       display.innerText = numero2;
     } else {
@@ -24,24 +76,12 @@ teclado.addEventListener("click", (e) => {
       display.innerText = numero1;
     }
   } else if (e.target.classList.contains("operations")) {
-    console.log(e.target.classList.contains("operations"));
     operation = e.target.textContent;
   } else if (e.target.id === "CE") {
-    numero1 = "";
-    numero2 = "";
-    operation = null;
-    display.innerText = 0;
+    cancelEntry();
+  } else if (e.target.id === "C") {
+    clearOperation();
   } else if (e.target.id === "igual") {
-    console.log(e.target.id === "igual");
-    console.log(operation);
-    if (operation === "+") {
-      console.log(operation === "+");
-      let resultado = soma(Number(numero1), Number(numero2));
-      console.log(resultado);
-      display.innerText = resultado;
-    }
+    calculate();
   }
-  console.log(numero1);
-  console.log(numero2);
-  console.log(operation);
 });
