@@ -29,7 +29,7 @@ Projeto desenvolvido durante o curso de **Desenvolvimento FullStack** oferecido 
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="calculadora-gif" title="#calculadora-gif" src="./public/img/calculadora.gif" width="400px">
+  <img alt="calculadora-gif" title="#calculadora-gif" src="./img/calculadora.gif" width="400px">
 
 </p>
 
