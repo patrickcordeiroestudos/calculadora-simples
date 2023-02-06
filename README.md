@@ -21,9 +21,6 @@
 - [ ] Animação de arrastar para lixeira
 
 
-Projeto desenvolvido durante o curso de **Desenvolvimento FullStack** oferecido pela [Kenzie Academy Brasil](https://kenzie.com.br/). A Kenzie é uma escola de programação com um ensino de qualidade que capacita seus aluno para se tornarem desenvolvedores FullStack em 12 meses!
-
-
 ## 🎨 Layout
 
 ### Web
