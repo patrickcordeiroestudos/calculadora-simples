@@ -6,7 +6,7 @@
 
 ## 💻 Sobre o projeto
 
-💲 Calculadora Clone Windows 10 - é uma aplicação para simular uma calculadora com um layout baseado na calculadora do windows 10, para uma experiência mais personalizada foi adicionado um visual bem parecido ao do sistema operacional com algumas animações bem interessantes.
+➗ Calculadora Clone Windows 10 - é uma aplicação para simular uma calculadora com um layout baseado na calculadora do windows 10, para uma experiência mais personalizada foi adicionado um visual bem parecido ao do sistema operacional com algumas animações bem interessantes.
 
 ### Features
 
